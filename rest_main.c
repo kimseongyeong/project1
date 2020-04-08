@@ -1,5 +1,5 @@
 #include "restaurant.h"
-//commit 확인용
+
 void create_record();//완료
 void read_record();//완료
 void update_record();
@@ -248,11 +248,54 @@ void search_avg(){
         printf("%d. %s\n", i+1, r_to_string(p));
     }
 }
-void update_record(){}
+void update_record(){
+    char name[20];
+    int type,tat,mon,atm;
+    float  avg;
+    
+    printf("Enter a name > ");
+    scanf("%s", name);
+
+	 T_Record* p = r_search_by_name(name);
+	if(p) {
+        while(1){
+        printf("How delicious is it? (0~5) >");
+        scanf("%d",&tat);
+        if (tat<0 || tat>5)
+            printf("wrong number!\n");
+        else
+            break;
+        }
+
+        while(1){
+        printf("How was the quality for the price? (0~5) >");
+        scanf("%d",&mon);
+        if (mon<0 || mon>5)
+            printf("wrong number!\n");
+        else
+            break;
+        }
+
+        while(1){
+        printf("How was the atmosphere? (0~5) >");
+        scanf("%d",&atm);
+        if (atm<0 || atm>5)
+            printf("wrong number!\n");
+        else
+            break;
+        }
+        avg=(float)( tat + mon + atm)/3.0;
+       
+		
+	r_update(p, tat, mon, atm, avg);
+												    }
+	 else {
+		 printf("No such member!\n");
+					        }
+}
+
+
 void delete_record_byname(){}
 void delete_byavg(){}
 void op(){}
-void sort_avg(){}
-
-                                                                                                                                                       
-                                                                                                                                                           
+void sort_avg(){}                                                                                                                        
