@@ -1,5 +1,5 @@
 #include "restaurant.h"
-
+//commit 확인용
 void create_record();//완료
 void read_record();//완료
 void update_record();
