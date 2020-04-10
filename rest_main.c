@@ -250,7 +250,7 @@ void search_avg(){
 }
 void update_record(){
     char name[20];
-    int type,tat,mon,atm;
+    int ty, tat,mon,atm;
     float  avg;
     
     printf("Enter a name > ");
@@ -258,6 +258,17 @@ void update_record(){
 
 	 T_Record* p = r_search_by_name(name);
 	if(p) {
+	
+		
+	while(1){
+        printf("Normal[1] Cafe[2] Bakery[3] >");
+        scanf("%d",&ty);
+        if (ty<0 || ty>3)
+                printf("Wrong number!\n");
+        else
+                break;
+	}
+
         while(1){
         printf("How delicious is it? (0~5) >");
         scanf("%d",&tat);
@@ -287,7 +298,7 @@ void update_record(){
         avg=(float)( tat + mon + atm)/3.0;
        
 		
-	r_update(p, tat, mon, atm, avg);
+	r_update(p,ty, tat, mon, atm, avg);
 												    }
 	 else {
 		 printf("No such member!\n");

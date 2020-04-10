@@ -38,7 +38,7 @@ void r_init(); // 모든 레코드
 char* r_to_string_save(T_Record* p); // 특정 회원 레코드의 내용을 파일저장용 문자열로 가져오기
 int r_is_available();       // 현재 추가할 수 있는 데이터 공간이 있는가?
 
- void r_update(T_Record* p, int ty , int ta, int m, int a, float  av);
+ void r_update(T_Record* p,int ty,  int ta, int m, int a, float  av);
 int r_get_all_by_name(T_Record* a[], char* n);  // 회원이름에 문자열이 포함된 모든 레코드 포인터의 배열 만들기 
 int r_get_all_by_avg(T_Record* a[], float  av);  // 회원거주도시가 문자열과 일치하는 모든 레코드 포인터의 배열 만들기 
 void r_delete(T_Record* p);     // 특정 회원 레코드의 회원정보 제거

@@ -148,9 +148,9 @@ char* r_to_string_save(T_Record* p){
  return str;
 }
 
-void r_update(T_Record* p, int ty , int ta, int m, int a, float  av){
-    p->type = ty;
-    p->tat = ta;
+void r_update(T_Record* p ,int ty,  int ta, int m, int a, float  av){
+    p-> type = ty;
+	p->tat = ta;
     p->mon = m;
     p->atm = a;
     p->avg = av;
