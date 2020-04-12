@@ -81,9 +81,9 @@ void create_record(){
 
         printf("Input a restaurant's info.\n");
         while(1){
-        printf("Normal[1] Cafe[2] Bakery[3] >");
+        printf("한식[1] 중식[2] 일식[3] 양식[4]>");
         scanf("%d",&ty);
-        if (ty<0 || ty>3)
+        if (ty<0 || ty>4)
                 printf("Wrong number!\n");
         else
                 break;
@@ -199,7 +199,7 @@ void load_file(){
         }
 
         r_create(ty,name,tat,mon,atm,avg);
-        printf("[Load] load %s\n", name);
+        printf("[Load] %s\n", name);
     }
     printf("%d records are read from file!\n", r_count());
     fclose(f);
@@ -306,7 +306,46 @@ void update_record(){
 }
 
 
-void delete_record_byname(){}
-void delete_byavg(){}
-void op(){}
-void sort_avg(){}                                                                                                                        
+void delete_record_byname(){
+
+    char name[20];
+    printf("Enter a name > ");
+    scanf("%s", name);
+
+    T_Record* p = r_search_by_name(name);
+    if(p) {
+       r_delete(p);
+        printf("The record is deleted!\n");
+    }
+    else {
+        printf("No such member!\n");
+    }
+}
+ 
+void delete_byavg(){
+	float avg;
+	int count = r_count();
+	T_Record* a[MAX_MEMBERS];
+	printf("Enter an average > ");
+	scanf("%f",&avg);
+	for(int i=0;i<count;i++){
+	a[i] = r_search_by_avg(avg);
+	if(a[i]){
+	r_delete(a[i]);
+	}
+	
+}
+	printf("Completed!!");
+	
+}
+void op(){
+	
+	r_optimize();
+	printf("Optimized!");
+ 
+}
+void sort_avg(){
+	r_optimize();
+	r_sort();
+	printf("Sorted!");
+}                                                                                                                        

@@ -50,8 +50,20 @@ T_Record* r_search_by_name(char *n){
 
 char* r_to_string(T_Record* p){
     static char str[80];
-    sprintf(str, " %s \n맛: %d 가성비: %d 분위기: %d\n평균 %.1f", p->name, p->tat, p->mon, p->atm, p->avg);
+	if (p->type == 1){
+    sprintf(str, " %s [ 한식]  \n맛: %d 가성비: %d 분위기: %d\n평균 %.1f", p->name, p->tat, p->mon, p->atm, p->avg);
+}
+	else if (p->type == 2){
+    sprintf(str, " %s [ 중식] \n맛: %d 가성비: %d 분위기: %d\n평균 %.1f", p->name, p->tat, p->mon, p->atm, p->avg);
+}
 
+	else if (p->type == 3){
+    sprintf(str, " %s [ 일식] \n맛: %d 가성비: %d 분위기: %d\n평균 %.1f", p->name, p->tat, p->mon, p->atm, p->avg);
+}
+
+	else if (p->type == 4){
+    sprintf(str, " %s [ 양식] \n맛: %d 가성비: %d 분위기: %d\n평균 %.1f", p->name, p->tat, p->mon, p->atm, p->avg);
+}
 #ifdef DEBUG
 	printf("DEBUG");
 #endif
@@ -161,7 +173,7 @@ void r_delete(T_Record* p){
     for(i=0; i<MAX_MEMBERS; i++)
         if(members[i]==p) {
             index=i;
-            break;
+           break;
         }
     free(p);
     members[index] = NULL;
@@ -193,5 +205,47 @@ int r_get_all_by_avg(T_Record* a[], float av){
     return c;
 }
 
+T_Record * r_search_by_avg(float avg){
+	
+    int i;
+    for(i=0; i<MAX_MEMBERS; i++){
+        if(members[i] && avg >  members[i]->avg) return members[i];
+    }
+    return NULL;
+}
 
+void r_sort(){
+	  int i, j;
+	int  count;
+	float temp;
+	count = r_count();
+  for(i=count-1; i>0; i--){
+    for(j=0; j<i; j++){
+      if(members[j]->avg<members[j+1]->avg){
+        temp = members[j]->avg;
+        members[j]->avg = members[j+1]->avg;
+        members[j+1]->avg = temp;
+      }
+    }
+  }
+}
+	
+	
+void r_optimize(){
+	int i=0, j=0;
+
+	for (i=0;i<MAX_MEMBERS;i++){
+		if(members[i]==NULL){
+			for(j=i+1;j<MAX_MEMBERS;j++){
+				if(members[j]!=NULL){
+					members[i]=members[j];
+					members[j]=NULL;
+					break;
+					}
+				}
+			}
+
+		}
+
+	}
 
