@@ -2,16 +2,16 @@
 
 void create_record();//완료
 void read_record();//완료
-void update_record();
-void delete_record_byname();
-void delete_byavg();
+void update_record();//완료
+void delete_record_byname();//완료
+void delete_byavg();//완료
 void list_record();//완료
 void search_name();//완료
 void search_avg();//완료
 void load_file();//완료
 void save_file();//완료
-void op();
-void sort_avg();
+void op();//완료
+void sort_avg();//완료
 
 
     int main(){
@@ -345,7 +345,7 @@ void op(){
  
 }
 void sort_avg(){
-	r_optimize();
+	//r_optimize();
 	r_sort();
 	printf("Sorted!");
 }                                                                                                                        
