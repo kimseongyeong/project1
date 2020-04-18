@@ -181,11 +181,11 @@ void r_delete(T_Record* p){
 
 }
 
-int r_get_all_by_name(T_Record* a[], char* n){
+int r_get_all_by_type(T_Record* a[], int  ty){
     // 회원이름에 문자열이 포함된 모든 레코드 포인터의 배열 만들기    
     int i, c=0;
     for(i=0; i<MAX_MEMBERS; i++){
-        if(members[i]!=NULL && strstr(members[i]->name, n)){
+        if(members[i]!=NULL && (members[i]->type == ty)){
             a[c]=members[i];
             c++;
         }
@@ -209,7 +209,7 @@ T_Record * r_search_by_avg(float avg){
 	
     int i;
     for(i=0; i<MAX_MEMBERS; i++){
-        if(members[i] && avg >  members[i]->avg) return members[i];
+        if(members[i] && avg >=  members[i]->avg) return members[i];
     }
     return NULL;
 }

@@ -6,7 +6,7 @@ void update_record();//완료
 void delete_record_byname();//완료
 void delete_byavg();//완료
 void list_record();//완료
-void search_name();//완료
+void search_type();//완료
 void search_avg();//완료
 void load_file();//완료
 void save_file();//완료
@@ -20,7 +20,7 @@ void sort_avg();//완료
         while(1){
                 printf("\nMenu\n");
                 printf("1.Create 2.Read 3.Update 4.Delete(name)\n");
-                printf("5.Delete(avg)6.List 7.Search(name) 8.Search(avg)\n") ;
+                printf("5.Delete(avg)6.List 7.Search(type) 8.Search(avg)\n") ;
                 printf("9.Load 10.Save 11.Optimize Record 12.Sort 0.Quit\n");
                 printf("\nplease input a menu number:");
                 scanf("%d", &menu);
@@ -45,7 +45,7 @@ void sort_avg();//완료
                             list_record();
                             break;
                         case 7:
-                            search_name();
+                            search_type();
                             break;
                         case 8:
                             search_avg();
@@ -219,14 +219,14 @@ void save_file(){
     fclose(f);
 }
 
-void search_name(){
+void search_type(){
     //이름 일부문자열로 검색
-    char name[20];
-    printf("Enter a name > ");
-    scanf("%s", name);
+    int type;
+    printf("한식[1] 중식[2] 일식[3] 양식[4] > ");
+    scanf("%d",&type);
 
     T_Record* records[MAX_MEMBERS];
-    int size = r_get_all_by_name(records, name);
+    int size = r_get_all_by_type(records, type);
     printf("%d records found.\n", size);
     for(int i=0; i<size; i++){
         T_Record* p = records[i];
@@ -261,9 +261,9 @@ void update_record(){
 	
 		
 	while(1){
-        printf("Normal[1] Cafe[2] Bakery[3] >");
+        printf("한식[1] 중식[2] 일식[3] 양식[4] >");
         scanf("%d",&ty);
-        if (ty<0 || ty>3)
+        if (ty<0 || ty>4)
                 printf("Wrong number!\n");
         else
                 break;

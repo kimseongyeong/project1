@@ -6,7 +6,7 @@
 
 
 typedef  struct _rest{
-        int type; // 1이면 일반 음식점,2면 휴게음식점
+        int type; // 한식,중식,양식,일식 구분
         char name[20]; //식당 이름
         int  tat; //맛0~5 사이 입력
         int mon;//가성비 0~5 사이 입력
@@ -20,7 +20,7 @@ int r_is_available();       // 현재 추가할 수 있는 데이터 공간이 �
 int r_first_available();// 추가 할 수 있는 가장 빠른 포인터 배열의 인덱스 찾기
 void r_create(int t, char*n, int ta , int m, int a , float avg); // 신규 레코드 >추가
 //Read
-T_Record* r_search_by_name(char *n); //이름이 일치하는 맛집 레코드 포인터 찾기+ 일반음식점 or 휴게 음식점
+T_Record* r_search_by_name(char *n); //타입이 일치하는 맛집 레코드 포인터 찾기
 char* r_to_string(T_Record* p); // 특정 레코드의 내용을 문자열로 가져오기
 int  r_gettype(T_Record* p); // 특정  레코드의 타입 가져오기
 char* r_getname(T_Record* p);   // 특정  레코드의 이름 가져오기
@@ -39,7 +39,7 @@ char* r_to_string_save(T_Record* p); // 특정 회원 레코드의 내용을 파
 int r_is_available();       // 현재 추가할 수 있는 데이터 공간이 있는가?
 
  void r_update(T_Record* p,int ty,  int ta, int m, int a, float  av);
-int r_get_all_by_name(T_Record* a[], char* n);  // 회원이름에 문자열이 포함된 모든 레코드 포인터의 배열 만들기 
+int r_get_all_by_type(T_Record* a[], int ty);  // 회원이름에 문자열이 포함된 모든 레코드 포인터의 배열 만들기 
 int r_get_all_by_avg(T_Record* a[], float  av);  // 회원거주도시가 문자열과 일치하는 모든 레코드 포인터의 배열 만들기 
 void r_delete(T_Record* p);     // 특정 회원 레코드의 회원정보 제거
 T_Record * r_search_by_avg(float avg);//특정 평균이하를 가진 레코드를 찾는다.
