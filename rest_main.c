@@ -73,7 +73,7 @@ void sort_avg();//완료
 
 void create_record(){
         int ty;
-       char name[20];
+       char name[100];
         int tat;
         int mon;
         int atm;
@@ -127,7 +127,7 @@ void create_record(){
 
         }
 void read_record(){
-        char name[20];
+        char name[100];
 
         while(1){
         printf("Name? > ");
@@ -183,7 +183,7 @@ void load_file(){
     r_init();   // 레코드 모두 제거
 
     FILE* f = fopen("members.txt", "r");
-    char name[20];
+    char name[100];
     int ty,mon,atm,tat;
     float  avg;
     while(!feof(f)){
@@ -249,7 +249,7 @@ void search_avg(){
     }
 }
 void update_record(){
-    char name[20];
+    char name[100];
     int ty, tat,mon,atm;
     float  avg;
     
@@ -308,7 +308,7 @@ void update_record(){
 
 void delete_record_byname(){
 
-    char name[20];
+    char name[100];
     printf("Enter a name > ");
     scanf("%s", name);
 

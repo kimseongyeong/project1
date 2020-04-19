@@ -215,16 +215,37 @@ T_Record * r_search_by_avg(float avg){
 }
 
 void r_sort(){
-	  int i, j;
+	 int i, j;
 	int  count;
-	float temp;
+	char  temp_name[80];
+	int temp_tat;
+	int temp_mon;
+	int temp_atm;
+	float temp_avg;
 	count = r_count();
   for(i=count-1; i>0; i--){
     for(j=0; j<i; j++){
       if(members[j]->avg<members[j+1]->avg){
-        temp = members[j]->avg;
+        temp_avg = members[j]->avg;
         members[j]->avg = members[j+1]->avg;
-        members[j+1]->avg = temp;
+        members[j+1]->avg = temp_avg;
+
+        temp_tat = members[j]->tat;
+        members[j]->tat = members[j+1]->tat;
+        members[j+1]->tat = temp_tat;
+
+        temp_atm = members[j]->atm;
+        members[j]->atm = members[j+1]->atm;
+        members[j+1]->atm = temp_atm;
+        
+	temp_mon = members[j]->mon;
+        members[j]->mon = members[j+1]->mon;
+        members[j+1]->mon = temp_mon;
+	
+	strcpy(temp_name,members[j]->name);
+	strcpy(members[j]->name,members[j+1]->name);
+	strcpy(members[j+1]->name,temp_name);
+
       }
     }
   }
