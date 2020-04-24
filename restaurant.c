@@ -218,6 +218,7 @@ void r_sort(){
 	 int i, j;
 	int  count;
 	char  temp_name[80];
+	int temp_type;
 	int temp_tat;
 	int temp_mon;
 	int temp_atm;
@@ -229,7 +230,11 @@ void r_sort(){
         temp_avg = members[j]->avg;
         members[j]->avg = members[j+1]->avg;
         members[j+1]->avg = temp_avg;
-
+	
+        temp_type = members[j]->type;
+        members[j]->type = members[j+1]->type;
+        members[j+1]->type = temp_type;
+	
         temp_tat = members[j]->tat;
         members[j]->tat = members[j+1]->tat;
         members[j+1]->tat = temp_tat;
