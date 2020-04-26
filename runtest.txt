@@ -1,0 +1,51 @@
+
+Menu
+1.Create 2.Read 3.Update 4.Delete(name)
+5.Delete(avg)6.List 7.Search(type) 8.Search(avg)
+9.Load 10.Save 11.Optimize Record 12.Sort 0.Quit
+
+please input a menu number:1
+
+Input a restaurant's info.
+한식[1] 중식[2] 일식[3] 양식[4]>1
+Name?  >고향분식
+How delicious is it? (0~5) >5
+How was the quality for the price? (0~5) >5
+How was the atmosphere? (0~5) >5
+The average is 5.0.
+
+Menu
+1.Create 2.Read 3.Update 4.Delete(name)
+5.Delete(avg)6.List 7.Search(type) 8.Search(avg)
+9.Load 10.Save 11.Optimize Record 12.Sort 0.Quit
+
+please input a menu number:3
+
+Enter a name > 고향분식
+한식[1] 중식[2] 일식[3] 양식[4] >1
+How delicious is it? (0~5) >5
+How was the quality for the price? (0~5) >5
+How was the atmosphere? (0~5) >2
+
+Menu
+1.Create 2.Read 3.Update 4.Delete(name)
+5.Delete(avg)6.List 7.Search(type) 8.Search(avg)
+9.Load 10.Save 11.Optimize Record 12.Sort 0.Quit
+
+please input a menu number:2
+
+Name? > 고향분식
+restaurant's info.
+== Normal ==
+Name : 고향분식
+Taste : 5
+Cost-effective :5
+Atmosphere :2
+average :4.0
+Star score >> ****
+Menu
+1.Create 2.Read 3.Update 4.Delete(name)
+5.Delete(avg)6.List 7.Search(type) 8.Search(avg)
+9.Load 10.Save 11.Optimize Record 12.Sort 0.Quit
+
+please input a menu number:
