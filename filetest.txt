@@ -1,0 +1,72 @@
+
+Menu
+1.Create 2.Read 3.Update 4.Delete(name)
+5.Delete(avg)6.List 7.Search(type) 8.Search(avg)
+9.Load 10.Save 11.Optimize Record 12.Sort 0.Quit
+
+please input a menu number:9
+
+All data will be deleted and new records will be reloaded.
+1.Yes 0.No > 1
+[Load] 테스트용
+[Load] 엄청긴한식집이름을찾습니다.
+[Load] 여장부
+[Load] 한근반근
+[Load] 생고기제작소
+[Load] 고기구락부
+[Load] 김스타치킨
+[Load] 탭앤탭앤프리츠
+[Load] 맛없는집
+[Load] 579포차
+[Load] 한양곱창전골
+[Load] 지호한방삼계
+[Load] 호원
+[Load] 구월애
+[Load] 동네맛집
+[Load] 대궐
+[Load] 서가앤쿡
+[Load] 논스탠다드
+[Load] 유난
+[Load] 뜨돈
+[Load] 마장동뒷고기
+[Load] 홍익돈까스
+[Load] 오토상스테끼
+[Load] 구가연어
+[Load] 쿡피시
+[Load] 러빙스시
+[Load] 시래기국밥
+[Load] 맛찬들
+[Load] 진짜배기119
+[Load] 생고기
+[Load] 홍길동전
+[Load] 리틀타이키친
+[Load] 전우치전
+[Load] 고즈넉
+[Load] 수애노
+[Load] 소가담
+[Load] 하찌밥상
+[Load] 선산곱창
+[Load] 홍콩반점
+[Load] 양덕손짜장
+[Load] 아이니
+[Load] 코레아경양식
+[Load] 바벤
+[Load] 스프커리보울
+[Load] 일가연
+[Load] 한우좋은날
+[Load] 99통삼겹
+[Load] 할매육숫간
+[Load] 쌀통닭
+[Load] 호식이두마리치킨
+[Load] 교동짬뽕
+[Load] 팔선
+[Load] 우얼마이
+[Load] 인브리즈
+54 records are read from file!
+
+Menu
+1.Create 2.Read 3.Update 4.Delete(name)
+5.Delete(avg)6.List 7.Search(type) 8.Search(avg)
+9.Load 10.Save 11.Optimize Record 12.Sort 0.Quit
+
+please input a menu number:
