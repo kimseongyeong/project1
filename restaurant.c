@@ -41,10 +41,7 @@ T_Record* r_search_by_name(char *n){
         for(i=0; i<MAX_MEMBERS; i++){
                 if(members[i]!=NULL && strcmp(members[i]->name,n)== 0) return members[i];
         }
-       
-#ifdef DEBUG
-	printf("DEBUG");
-#endif
+
  return NULL;
 }
 
@@ -64,9 +61,7 @@ char* r_to_string(T_Record* p){
 	else if (p->type == 4){
     sprintf(str, " %s [ 양식] \n맛: %d 가성비: %d 분위기: %d\n평균 %.1f", p->name, p->tat, p->mon, p->atm, p->avg);
 }
-#ifdef DEBUG
-	printf("DEBUG");
-#endif
+
     return str;
 
 }
@@ -86,53 +81,27 @@ void r_get_all(T_Record* a[]){
 }
 
 int r_gettype(T_Record* p){
-
-#ifdef DEBUG
-	printf("DEBUG");
-#endif
         return p->type;
 }
 char* r_getname(T_Record* p){
 
-#ifdef DEBUG
-	printf("DEBUG");
-#endif
         return p->name;
 }
 int r_gettat(T_Record* p){
-
-#ifdef DEBUG
-	printf("DEBUG");
-#endif
         return p->tat;
 }
 int r_getatm(T_Record* p){
-
-#ifdef DEBUG
-	printf("DEBUG");
-#endif
         return p->atm;
 }
 int r_getmon(T_Record* p){
-
-#ifdef DEBUG
-	printf("DEBUG");
-#endif
         return p->mon;
 }
 float r_getavg(T_Record* p){
-
-#ifdef DEBUG
-	printf("DEBUG");
-#endif
         return p->avg;
 }
 
 int r_count()
 {
-#ifdef DEBUG
-	printf("DEBUG");
-#endif
         return _count;
 }
 
