@@ -138,11 +138,13 @@ void read_record(){
         if(p){
                 printf("restaurant's info.\n");
                 if(r_gettype(p)==1)
-                printf("== Normal == \n");
+                printf("== 한식 == \n");
                 else if(r_gettype(p)==2)
-                printf("== Cafe ==\n");
+                printf("== 중식 ==\n");
                 else if (r_gettype(p)==3)
-                printf("== Bakery ==\n");
+                printf("== 일 식 ==\n");
+		else if (r_gettype(p)==4)
+		printf("== 양 식 ==\n");
                 printf("Name : %s\n", r_getname(p));
                 printf("Taste : %d\n", r_gettat(p));
                 printf("Cost-effective :%d\n", r_getmon(p));
