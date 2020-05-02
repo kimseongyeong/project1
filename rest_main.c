@@ -103,14 +103,13 @@ void create_record(){
 		return;
 }
 
-        while(1){
+     
         printf("How was the quality for the price? (0~5) >");
         scanf("%d",&mon);
-        if (mon<0 || mon>5)
+        if (mon<0 || mon>5){
             printf("wrong number!\n");
-        else
-            break;
-        }
+        return;
+}
 
         while(1){
         printf("How was the atmosphere? (0~5) >");
