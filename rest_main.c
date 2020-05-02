@@ -80,13 +80,13 @@ void create_record(){
         float avg=0;
 
         printf("Input a restaurant's info.\n");
-        while(1){
+  
         printf("한식[1] 중식[2] 일식[3] 양식[4]>");
         scanf("%d",&ty);
-        if (ty<0 || ty>4)
+        if (ty<0 || ty>4){
                 printf("Wrong number!\n");
-        else
-                break;
+    		return ;
+
         }
         printf("Name?  >");
         scanf("%s" , name);
