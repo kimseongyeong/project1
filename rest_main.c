@@ -347,7 +347,7 @@ void op(){
  
 }
 void sort_avg(){
-	//r_optimize();
+	r_optimize();
 	r_sort();
 	printf("Sorted!");
 }                                                                                                                        
