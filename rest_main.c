@@ -95,14 +95,13 @@ void create_record(){
                 return;
         }
 
-        while(1){
+   
         printf("How delicious is it? (0~5) >");
         scanf("%d",&tat);
-        if (tat<0 || tat>5)
+        if (tat<0 || tat>5){
             printf("wrong number!\n");
-        else
-            break;
-        }
+		return;
+}
 
         while(1){
         printf("How was the quality for the price? (0~5) >");
