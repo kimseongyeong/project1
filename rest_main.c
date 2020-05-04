@@ -111,14 +111,12 @@ void create_record(){
         return;
 }
 
-        while(1){
         printf("How was the atmosphere? (0~5) >");
         scanf("%d",&atm);
-        if (atm<0 || atm>5)
+        if (atm<0 || atm>5){
             printf("wrong number!\n");
-        else
-            break;
-        }
+        return;}
+
         avg=(float)( tat + mon + atm)/3.0;
         printf("The average is %.1f.\n",avg);
         r_create(ty,name,tat,mon,atm,avg);
