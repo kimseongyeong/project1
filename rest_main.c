@@ -168,7 +168,7 @@ void list_record(){
     r_get_all(records);
     for(int i=0; i<size; i++){
         T_Record* p = records[i];
-        printf("%d. %s\n", i+1, r_to_string(p));
+        printf("\n%d. %s\n", i+1, r_to_string(p));
     }
 }
 void load_file(){
