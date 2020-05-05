@@ -148,7 +148,7 @@ void read_record(){
                 printf("average :%.1f\n", r_getavg(p));
                 printf("Star score >> ");
                 for (int j=0 ; j<r_getavg(p) ; j++)
-                    printf("*");
+                    printf("🌟");
                 break;
 
         }
