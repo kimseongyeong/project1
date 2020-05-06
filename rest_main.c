@@ -264,9 +264,8 @@ void update_record(){
         if (ty<0 || ty>4)
                 printf("Wrong number!\n");
         else
-                break;
-	}
-
+             break;
+}
         while(1){
         printf("How delicious is it? (0~5) >");
         scanf("%d",&tat);
