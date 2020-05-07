@@ -161,15 +161,22 @@ void read_record(){
 
 void list_record(){
     // 전체 리스트 출력
+
+    int size = r_count();
+    if(size  ==0 )
+	printf("There is nothing to show!");
+	
+else{
     printf("\tAll List\n");
     printf("=========================\n");
-    int size = r_count();
+}
     T_Record* records[MAX_MEMBERS];
     r_get_all(records);
     for(int i=0; i<size; i++){
         T_Record* p = records[i];
         printf("\n%d. %s\n", i+1, r_to_string(p));
     }
+
 }
 void load_file(){
     // 데이터파일 읽기
