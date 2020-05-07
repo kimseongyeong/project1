@@ -48,34 +48,22 @@ T_Record* r_search_by_name(char *n){
 char* r_to_string(T_Record* p){
     static char str[80];
 	if (p->type == 1){
-    sprintf(str, " \n%s [ 한식]  \n맛: %f 가성비: %f 분위기: %f\n평균 %.1f", p->name, p->tat, p->mon, p->atm, p->avg);
-printf("별점 : ");
-for (int i =0 ; i<=r_getavg(p); i++)
-
-	printf("🌟");
+    sprintf(str, " %s [ 한식]  \n맛: %.1f 가성비: %.1f 분위기: %.1f\n평균 %.1f", p->name, p->tat, p->mon, p->atm, p->avg);
 	
 }
 	else if (p->type == 2){
-    sprintf(str, " \n%s [ 중식] \n맛: %f 가성비: %f 분위기: %f\n평균 %.1f", p->name, p->tat, p->mon, p->atm, p->avg);
+    sprintf(str, " %s [ 중식] \n맛: %.1f 가성비: %.1f 분위기: %.1f\n평균 %.1f", p->name, p->tat, p->mon, p->atm, p->avg);
 
-printf("별점 : ");
-for (int i =0 ; i<=r_getavg(p); i++)
-	printf("🌟");
 }
 
 	else if (p->type == 3){
-    sprintf(str, "\n%s [ 일식] \n맛: %f 가성비: %f 분위기: %f\n평균 %.1f", p->name, p->tat, p->mon, p->atm, p->avg);
+    sprintf(str, " %s [ 일식] \n맛: %.1f 가성비: %.1f 분위기: %.1f\n평균 %.1f", p->name, p->tat, p->mon, p->atm, p->avg);
 
-printf("별점 : ");
-for (int i =0 ; i<=r_getavg(p); i++)
-	printf("🌟");
 }
 
 	else if (p->type == 4){
-    sprintf(str, " \n%s [ 양식] \n맛: %f 가성비: %f 분위기: %f\n평균 %.1f", p->name, p->tat, p->mon, p->atm, p->avg);
-printf("별점 : ");
-for (int i =0 ; i<=r_getavg(p); i++)
-	printf("🌟");
+    sprintf(str, " %s [ 양식] \n맛: %.1f 가성비: %.1f 분위기: %.1f\n평균 %.1f", p->name, p->tat, p->mon, p->atm, p->avg);
+
 }
 
 
@@ -138,7 +126,7 @@ void r_init(){
 }
 char* r_to_string_save(T_Record* p){
     static char str[80];
-    sprintf(str, "%s %d %f %f %f %.1f ", p->name, p->type, p->tat, p->mon, p->atm,p->avg);
+    sprintf(str, "%s %d %.1f %.1f %.1f %.1f ", p->name, p->type, p->tat, p->mon, p->atm,p->avg);
    
 #ifdef DEBUG
 	printf("DEBUG");
