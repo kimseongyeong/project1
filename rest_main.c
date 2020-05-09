@@ -97,7 +97,7 @@ void create_record(){
 
    
         printf("How delicious is it? (0~5) >");
-        scanf("%d",&tat);
+        scanf("%f",&tat);
         if (tat<0 || tat>5){
             printf("wrong number!\n");
 		return;
@@ -105,14 +105,14 @@ void create_record(){
 
      
         printf("How was the quality for the price? (0~5) >");
-        scanf("%d",&mon);
+        scanf("%f",&mon);
         if (mon<0 || mon>5){
             printf("wrong number!\n");
         return;
 }
 
         printf("How was the atmosphere? (0~5) >");
-        scanf("%d",&atm);
+        scanf("%f",&atm);
         if (atm<0 || atm>5){
             printf("wrong number!\n");
         return;}
