@@ -74,9 +74,9 @@ void sort_avg();//완료
 void create_record(){
         int ty;
        char name[100];
-        int tat;
-        int mon;
-        int atm;
+       float  tat;
+       float  mon;
+       float  atm;
         float avg=0;
 
         printf("Input a restaurant's info.\n");
