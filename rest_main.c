@@ -72,12 +72,12 @@ void sort_avg();//완료
     }
 
 void create_record(){
-        int ty;
+       int ty;
        char name[100];
        float  tat;
        float  mon;
        float  atm;
-        float avg=0;
+       float avg=0;
 
         printf("Input a restaurant's info.\n");
   
