@@ -8,9 +8,9 @@
 typedef  struct _rest{
         int type; // 한식,중식,양식,일식 구분
         char name[100]; //식당 이름
-        int  tat; //맛0~5 사이 입력
-        int mon;//가성비 0~5 사이 입력
-        int atm; // 분위기 0~5 사이 입력
+        float  tat; //맛0~5 사이 입력
+        float  mon;//가성비 0~5 사이 입력
+        float  atm; // 분위기 0~5 사이 입력
         float avg; //맛+ 분위기+ 가성비 의 평균
 } T_Record;
 

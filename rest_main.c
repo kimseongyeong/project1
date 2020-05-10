@@ -72,21 +72,21 @@ void sort_avg();//완료
     }
 
 void create_record(){
-        int ty;
+       int ty;
        char name[100];
-        int tat;
-        int mon;
-        int atm;
-        float avg=0;
+       float  tat;
+       float  mon;
+       float  atm;
+       float avg=0;
 
         printf("Input a restaurant's info.\n");
-        while(1){
+  
         printf("한식[1] 중식[2] 일식[3] 양식[4]>");
         scanf("%d",&ty);
-        if (ty<0 || ty>4)
+        if (ty<0 || ty>4){
                 printf("Wrong number!\n");
-        else
-                break;
+    		return ;
+
         }
         printf("Name?  >");
         scanf("%s" , name);
@@ -95,32 +95,28 @@ void create_record(){
                 return;
         }
 
-        while(1){
+   
         printf("How delicious is it? (0~5) >");
-        scanf("%d",&tat);
-        if (tat<0 || tat>5)
+        scanf("%f",&tat);
+        if (tat<0 || tat>5){
             printf("wrong number!\n");
-        else
-            break;
-        }
+		return;
+}
 
-        while(1){
+     
         printf("How was the quality for the price? (0~5) >");
-        scanf("%d",&mon);
-        if (mon<0 || mon>5)
+        scanf("%f",&mon);
+        if (mon<0 || mon>5){
             printf("wrong number!\n");
-        else
-            break;
-        }
+        return;
+}
 
-        while(1){
         printf("How was the atmosphere? (0~5) >");
-        scanf("%d",&atm);
-        if (atm<0 || atm>5)
+        scanf("%f",&atm);
+        if (atm<0 || atm>5){
             printf("wrong number!\n");
-        else
-            break;
-        }
+        return;}
+
         avg=(float)( tat + mon + atm)/3.0;
         printf("The average is %.1f.\n",avg);
         r_create(ty,name,tat,mon,atm,avg);
@@ -138,11 +134,13 @@ void read_record(){
         if(p){
                 printf("restaurant's info.\n");
                 if(r_gettype(p)==1)
-                printf("== Normal == \n");
+                printf("== 한식 == \n");
                 else if(r_gettype(p)==2)
-                printf("== Cafe ==\n");
+                printf("== 중식 ==\n");
                 else if (r_gettype(p)==3)
-                printf("== Bakery ==\n");
+                printf("== 일 식 ==\n");
+		else if (r_gettype(p)==4)
+		printf("== 양 식 ==\n");
                 printf("Name : %s\n", r_getname(p));
                 printf("Taste : %d\n", r_gettat(p));
                 printf("Cost-effective :%d\n", r_getmon(p));
@@ -150,7 +148,7 @@ void read_record(){
                 printf("average :%.1f\n", r_getavg(p));
                 printf("Star score >> ");
                 for (int j=0 ; j<r_getavg(p) ; j++)
-                    printf("*");
+                    printf("🌟");
                 break;
 
         }
@@ -163,15 +161,22 @@ void read_record(){
 
 void list_record(){
     // 전체 리스트 출력
+
+    int size = r_count();
+    if(size  ==0 )
+	printf("There is nothing to show!");
+	
+else{
     printf("\tAll List\n");
     printf("=========================\n");
-    int size = r_count();
+}
     T_Record* records[MAX_MEMBERS];
     r_get_all(records);
     for(int i=0; i<size; i++){
         T_Record* p = records[i];
-        printf("%d. %s\n", i+1, r_to_string(p));
+        printf("\n%d. %s\n", i+1, r_to_string(p));
     }
+
 }
 void load_file(){
     // 데이터파일 읽기
@@ -266,9 +271,8 @@ void update_record(){
         if (ty<0 || ty>4)
                 printf("Wrong number!\n");
         else
-                break;
-	}
-
+             break;
+}
         while(1){
         printf("How delicious is it? (0~5) >");
         scanf("%d",&tat);
@@ -345,7 +349,7 @@ void op(){
  
 }
 void sort_avg(){
-	//r_optimize();
+	r_optimize();
 	r_sort();
 	printf("Sorted!");
 }                                                                                                                        
